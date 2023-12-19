@@ -19,7 +19,11 @@ const GetStartedScreen = () => {
     };
     return (
         <DsBox flex={1} alignItems="center" backgroundColor={'#0d0c0c'}>
-            <DsImage position="absolute" source={SpaceBgGetstart} />
+            <DsImage
+                position="absolute"
+                source={SpaceBgGetstart}
+                resizeMode="cover"
+            />
 
             <DsImage
                 source={logoRickMortyGreenBlue}
@@ -31,10 +35,9 @@ const GetStartedScreen = () => {
 
             <DsFlex
                 top={Platform.OS === 'ios' ? 300 : 200}
-                alignItems="center"
-                flexDirection="column"
-                paddingHorizontal={53}
                 position="relative"
+                alignItems="center"
+                justifyContent="space-between"
             >
                 <DsImage
                     source={Spacecraft}
@@ -44,6 +47,17 @@ const GetStartedScreen = () => {
                     position="absolute"
                     marginTop={Platform.OS === 'ios' ? -180 : -140}
                 />
+                <DsButton
+                    variant="secondary"
+                    size="large"
+                    marginTop={Platform.OS === 'ios' ? 135 : 180}
+                    fontWeight="700"
+                    lineHeight={22}
+                    textTransform="capitalize"
+                    onPress={OpenHandleGetstarted}
+                >
+                    Get started
+                </DsButton>
             </DsFlex>
         </DsBox>
     );
