@@ -28,8 +28,8 @@ const DsButton: React.FC<DsButtonProps> = (props) => {
         borderRadius: 30,
         padding:
             (size === 'small' && 4) ||
-            (size === 'medium' && 12) ||
-            (size === 'large' && 30) ||
+            (size === 'medium' && 16) ||
+            (size === 'large' && 24) ||
             0,
         alignItems: 'center',
         justifyContent: 'center',
@@ -41,7 +41,7 @@ const DsButton: React.FC<DsButtonProps> = (props) => {
         height:
             (size === 'small' && 40) ||
             (size === 'medium' && 52) ||
-            (size === 'large' && 92) ||
+            (size === 'large' && 72) ||
             'auto',
         backgroundColor:
             variant === 'default'
