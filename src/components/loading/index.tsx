@@ -1,11 +1,19 @@
 //components
-import DsIcon from "@ds/components/global/icon";
-import LayoutPublic from "@components/layout/public";
+import LayoutPublic from '@components/layout/public';
+import { DsImage } from '@ds/components/global';
+
+// images
+import logoRickMortyGreenBlue from '@images/splash/logo-rick-morty-green-blue.png';
 
 const Loading = () => {
     return (
         <LayoutPublic justifyContent="center" alignItems="center">
-            <DsIcon icon="spotify" size={196} color="#62CD5D" />
+            <DsImage
+                source={logoRickMortyGreenBlue}
+                resizeMode="cover"
+                width={375}
+                height={135}
+            />
         </LayoutPublic>
     );
 };
