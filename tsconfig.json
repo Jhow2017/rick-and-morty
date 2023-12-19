@@ -1,0 +1,14 @@
+{
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+        "strict": true,
+        "baseUrl": "./",
+        "paths": {
+            "@ds/*": ["src/designer-system/*"],
+            "@images/*": ["src/assets/*"],
+            "@screens/*": ["src/screens/*"],
+            "@components/*": ["src/components/*"]
+        },
+        "types": ["@react-navigation/bottom-tabs"]
+    }
+}
