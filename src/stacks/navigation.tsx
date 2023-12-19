@@ -1,24 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import React, { useEffect, useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 //utils
-import { simulateLoading } from "src/services/utils/simulateLoading";
+import { simulateLoading } from 'src/services/utils/simulateLoading';
 
 //components
-import Loading from "src/components/loading";
+import Loading from 'src/components/loading';
 
 //screens
 
-import { AppTabsStack } from "src/stacks/bottom-menu";
+import { AppTabsStack } from 'src/stacks/bottom-menu';
 import {
     ChooseModeScreen,
     GetStartedScreen,
     SignInScreen,
     RegisterScreen,
     LoginScreen,
-} from "@screens/index";
-import NowPlaying from "@components/dashboard/tabs-scroll-bar/new/now-playing";
+} from '@screens/index';
+import NowPlaying from '@components/dashboard/tabs-scroll-bar/new/now-playing';
+import { GraphQLProvider } from 'src/ctx/GraphQLProvider';
 
 const Stack = createStackNavigator();
 
@@ -60,24 +61,32 @@ const Navigation = () => {
             {isLoading ? (
                 <Loading />
             ) : (
-                <Stack.Navigator
-                    initialRouteName={"ChooseModeStack"}
-                    screenOptions={{ headerShown: false }}
-                >
-                    <Stack.Screen
-                        name="ChooseModeStack"
-                        component={ChooseModeStack}
-                    />
+                <GraphQLProvider>
+                    <Stack.Navigator
+                        initialRouteName={'ChooseModeStack'}
+                        screenOptions={{ headerShown: false }}
+                    >
+                        <Stack.Screen
+                            name="ChooseModeStack"
+                            component={ChooseModeStack}
+                        />
 
-                    <Stack.Screen name="LogonStack" component={LogonStack} />
+                        <Stack.Screen
+                            name="LogonStack"
+                            component={LogonStack}
+                        />
 
-                    <Stack.Screen name="NowPlaying" component={NowPlaying} />
+                        <Stack.Screen
+                            name="NowPlaying"
+                            component={NowPlaying}
+                        />
 
-                    <Stack.Screen
-                        name="AppTabsStack"
-                        component={AppTabsStack}
-                    />
-                </Stack.Navigator>
+                        <Stack.Screen
+                            name="AppTabsStack"
+                            component={AppTabsStack}
+                        />
+                    </Stack.Navigator>
+                </GraphQLProvider>
             )}
         </NavigationContainer>
     );
