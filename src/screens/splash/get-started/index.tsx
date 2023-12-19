@@ -1,69 +1,49 @@
-import { Platform } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 //@Ds
-import { DsBox, DsFlex } from "@ds/layout";
-import DsIcon from "@ds/components/global/icon";
-import DsImage from "@ds/components/global/image";
-import { DsText } from "@ds/components/typography";
-import DsButton from "@ds/components/global/button";
+import { DsBox, DsFlex } from '@ds/layout';
+import { DsImage, DsButton } from '@ds/components/global';
+import { DsText } from '@ds/components/typography';
 
 //images
-import BillieEilishGlasses from "@images/splash/billie-eilish-glasses.png";
+import SpaceBgGetstart from '@images/splash/space-bg-getstart.png';
+import logoRickMortyGreenBlue from '@images/splash/logo-rick-morty-green-blue.png';
+import Spacecraft from '@images/splash/spacecraft.png';
 
 const GetStartedScreen = () => {
     const navigation = useNavigation();
 
     const OpenHandleGetstarted = () => {
-        navigation.navigate("ChooseMode");
+        navigation.navigate('ChooseMode');
     };
     return (
-        <DsBox flex={1} alignItems="center" backgroundColor={"#0d0c0c"}>
-            <DsImage position="absolute" source={BillieEilishGlasses} />
-            <DsIcon
-                icon="spotify"
-                marginTop={Platform.OS === "ios" ? 65 : 42}
-                size={196}
-                color="#62CD5D"
+        <DsBox flex={1} alignItems="center" backgroundColor={'#0d0c0c'}>
+            <DsImage position="absolute" source={SpaceBgGetstart} />
+
+            <DsImage
+                source={logoRickMortyGreenBlue}
+                marginTop={Platform.OS === 'ios' ? 65 : 42}
+                resizeMode="cover"
+                width={375}
+                height={135}
             />
 
             <DsFlex
-                top={Platform.OS === "ios" ? 300 : 200}
+                top={Platform.OS === 'ios' ? 300 : 200}
                 alignItems="center"
                 flexDirection="column"
                 paddingHorizontal={53}
+                position="relative"
             >
-                <DsText
-                    color="#DADADA"
-                    fontSize={25}
-                    lineHeight={33}
-                    fontWeight="700"
-                >
-                    Enjoy listening to music
-                </DsText>
-                <DsText
-                    color="#DADADA"
-                    fontSize={17}
-                    lineHeight={22}
-                    fontWeight="400"
-                    textAlign="center"
-                    marginTop={21}
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sagittis enim purus sed phasellus. Cursus ornare id
-                    scelerisque aliquam.
-                </DsText>
-                <DsButton
-                    variant="secondary"
-                    size="large"
-                    marginTop={37}
-                    fontWeight="700"
-                    lineHeight={22}
-                    textTransform="capitalize"
-                    onPress={OpenHandleGetstarted}
-                >
-                    Get started
-                </DsButton>
+                <DsImage
+                    source={Spacecraft}
+                    resizeMode="cover"
+                    width={351}
+                    height={192}
+                    position="absolute"
+                    marginTop={Platform.OS === 'ios' ? -180 : -140}
+                />
             </DsFlex>
         </DsBox>
     );
