@@ -1,28 +1,33 @@
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useNavigation } from "@react-navigation/native";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { ScrollView, Keyboard, TouchableWithoutFeedback } from "react-native";
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useNavigation } from '@react-navigation/native';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import {
+    ScrollView,
+    Keyboard,
+    TouchableWithoutFeedback,
+    Platform,
+} from 'react-native';
 
 //@Ds
-import { DsFlex } from "@ds/layout";
-import DsIcon from "@ds/components/global/icon";
-import DsInput from "@ds/components/form/input";
-import DsLink from "@ds/components/global/link";
-import { DsText } from "@ds/components/typography";
-import DsButton from "@ds/components/global/button";
-import DsDivider from "@ds/components/global/divider";
+import { DsBox, DsFlex } from '@ds/layout';
+import DsIcon from '@ds/components/global/icon';
+import DsInput from '@ds/components/form/input';
+import DsLink from '@ds/components/global/link';
+import { DsText } from '@ds/components/typography';
+import DsButton from '@ds/components/global/button';
+import DsDivider from '@ds/components/global/divider';
 
 //components
-import Header from "src/components/header";
-import LayoutPublic from "@components/layout/public";
+import Header from 'src/components/header';
+import LayoutPublic from '@components/layout/public';
 
 const RegisterTypesSchema = z.object({
     fullName: z.string().min(3),
-    email: z.string().email({ message: "Invalid email address" }),
+    email: z.string().email({ message: 'Invalid email address' }),
     password: z
         .string()
-        .min(6, { message: "Password must be atleast 6 characters" }),
+        .min(6, { message: 'Password must be atleast 6 characters' }),
 });
 
 // extracting the type
@@ -36,7 +41,7 @@ const RegisterScreen = () => {
         formState: { errors },
     } = useForm<SignInTypes>({
         resolver: zodResolver(RegisterTypesSchema),
-        mode: "onBlur",
+        mode: 'onBlur',
     });
 
     const onSubmit: SubmitHandler<SignInTypes> = (data) => {
@@ -59,7 +64,7 @@ const RegisterScreen = () => {
             }}
         >
             <LayoutPublic paddingBottom={74}>
-                <Header />
+                <Header marginTop={Platform.OS === 'ios' ? 64 : 32} />
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                     <DsFlex marginTop={47} flexDirection="column">
                         <DsText
@@ -70,19 +75,18 @@ const RegisterScreen = () => {
                             textAlign="center"
                             textTransform="capitalize"
                         >
-                            Register
+                            Cadastro
                         </DsText>
 
                         <DsText
                             color="#E1E1E1"
                             fontSize={12}
-                            textTransform="capitalize"
                             marginTop={22}
                             textAlign="center"
                         >
-                            If you need any support{" "}
+                            Se você precisar de algum suporte{' '}
                             <DsLink
-                                color={"#38B432"}
+                                color={'#38B432'}
                                 fontSize={12}
                                 textAlign="center"
                                 textTransform="capitalize"
@@ -103,8 +107,7 @@ const RegisterScreen = () => {
                                         id="fullName"
                                         onChangeText={field.onChange}
                                         value={field.value}
-                                        placeholder="full name"
-                                        textTransform="capitalize"
+                                        placeholder="Nome Completo"
                                         error={
                                             errors.fullName &&
                                             errors.fullName.message
@@ -123,8 +126,7 @@ const RegisterScreen = () => {
                                         id="email"
                                         onChangeText={field.onChange}
                                         value={field.value}
-                                        placeholder="Enter email"
-                                        textTransform="capitalize"
+                                        placeholder="E-mail"
                                         error={
                                             errors.email && errors.email.message
                                         }
@@ -142,7 +144,7 @@ const RegisterScreen = () => {
                                         onChangeText={field.onChange}
                                         value={field.value}
                                         type="password"
-                                        placeholder="Password"
+                                        placeholder="Senha"
                                         error={
                                             errors.password &&
                                             errors.password.message
@@ -152,18 +154,21 @@ const RegisterScreen = () => {
                             />
                         </DsFlex>
 
-                        <DsButton
-                            variant="secondary"
-                            size="large"
-                            paddingHorizontal={36}
-                            fontWeight="700"
-                            lineHeight={22}
-                            borderRadius={30}
-                            marginTop={22}
-                            onPress={handleSubmit(onSubmit)}
-                        >
-                            Sign In
-                        </DsButton>
+                        <DsBox>
+                            <DsButton
+                                variant="secondary"
+                                size="large"
+                                paddingHorizontal={36}
+                                fontWeight="700"
+                                lineHeight={22}
+                                borderRadius={30}
+                                marginTop={22}
+                                onPress={handleSubmit(onSubmit)}
+                                width={'100%'}
+                            >
+                                Entrar
+                            </DsButton>
+                        </DsBox>
                     </DsFlex>
                 </TouchableWithoutFeedback>
                 <DsFlex
@@ -174,7 +179,7 @@ const RegisterScreen = () => {
                 >
                     <DsDivider
                         gradient={{
-                            colors: ["#252525", "#5B5B5B"],
+                            colors: ['#252525', '#5B5B5B'],
                             start: [1, 0],
                             end: [0, 0],
                         }}
@@ -182,11 +187,11 @@ const RegisterScreen = () => {
                         height={1}
                     />
                     <DsText fontSize={14} color="#DCDCDC" bottom={2}>
-                        Or
+                        Ou
                     </DsText>
                     <DsDivider
                         gradient={{
-                            colors: ["#252525", "#5B5B5B"],
+                            colors: ['#252525', '#5B5B5B'],
                             start: [0, 0],
                             end: [1, 0],
                         }}
@@ -212,15 +217,15 @@ const RegisterScreen = () => {
                     textTransform="capitalize"
                     marginTop={22}
                 >
-                    not a member ?{" "}
+                    Não é um membro ?{' '}
                     <DsLink
-                        color={"#288CE9"}
+                        color={'#288CE9'}
                         fontSize={14}
                         fontWeight="700"
                         textTransform="capitalize"
                         url="https://www.linkedin.com/in/jonathan-gama-2365a4187/"
                     >
-                        Register now
+                        Registrar agora
                     </DsLink>
                 </DsText>
             </LayoutPublic>

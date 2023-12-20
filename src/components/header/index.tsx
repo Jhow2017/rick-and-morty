@@ -3,7 +3,7 @@ import { View } from 'react-native';
 //components
 import { DsFlex } from '@ds/layout';
 
-// // designer-system
+// designer system
 import { DsFlexType } from '@ds/layout/flex';
 import { DsImage } from '@ds/components/global';
 

@@ -53,7 +53,7 @@ const GetStartedScreen = () => {
                     textTransform="capitalize"
                     onPress={OpenHandleGetstarted}
                 >
-                    Get started
+                    Começar
                 </DsButton>
             </DsFlex>
         </DsBox>

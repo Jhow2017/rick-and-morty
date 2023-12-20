@@ -1,41 +1,34 @@
-import { Platform } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-//components
-import { DsText } from "@ds/components/typography";
-import { DsBox, DsFlex } from "@ds/layout";
-import DsIcon from "@ds/components/global/icon";
-import DsButton from "@ds/components/global/button";
+// designer system
+import { DsBox, DsFlex } from '@ds/layout';
+import { DsIcon, DsImage, DsButton } from '@ds/components/global';
+import { DsText } from '@ds/components/typography';
 
 //images
-import DsImage from "@ds/components/global/image";
-import BillieEilishGreenHair from "@images/splash/billie-eilish-green-hair.png";
+import logoRickMortyGreenBlue from '@images/splash/logo-rick-morty-green-blue.png';
 
 const ChooseModeScreen = () => {
     const navigation = useNavigation();
     return (
-        <DsBox flex={1} alignItems="center" backgroundColor={"#494949"}>
-            <DsImage position="absolute" source={BillieEilishGreenHair} />
-            <DsIcon
-                icon="spotify"
-                marginTop={Platform.OS === "ios" ? 65 : 40}
-                size={196}
-                color="#62CD5D"
+        <DsBox flex={1} alignItems="center" backgroundColor={'#0F3A40'}>
+            <DsImage
+                source={logoRickMortyGreenBlue}
+                resizeMode="cover"
+                width={375}
+                height={135}
+                marginTop={Platform.OS === 'ios' ? 65 : 40}
             />
 
             <DsFlex
-                top={Platform.OS === "ios" ? 300 : 200}
+                top={Platform.OS === 'ios' ? 150 : 100}
                 alignItems="center"
                 paddingHorizontal={53}
                 flexDirection="column"
             >
-                <DsText
-                    color="#DADADA"
-                    fontSize={22}
-                    fontWeight="700"
-                    textTransform="capitalize"
-                >
-                    Choose mode
+                <DsText color="#DADADA" fontSize={22} fontWeight="700">
+                    Escolha o modo
                 </DsText>
                 <DsFlex gap={90} marginTop={32}>
                     <DsIcon
@@ -43,11 +36,11 @@ const ChooseModeScreen = () => {
                         size={30}
                         height={73}
                         width={73}
-                        backgroundColor={"#3f463c"}
+                        backgroundColor={'#3f463c'}
                         borderRadius={50}
                         justifyContent="center"
                         alignItems="center"
-                        onPress={() => console.log("Clicou na Lua")}
+                        onPress={() => console.log('Clicou na Lua')}
                     >
                         Dark mode
                     </DsIcon>
@@ -56,11 +49,11 @@ const ChooseModeScreen = () => {
                         size={30}
                         height={73}
                         width={73}
-                        backgroundColor={"#31383b"}
+                        backgroundColor={'#31383b'}
                         borderRadius={50}
                         justifyContent="center"
                         alignItems="center"
-                        onPress={() => console.log("Clicou no Sol")}
+                        onPress={() => console.log('Clicou no Sol')}
                     >
                         Light mode
                     </DsIcon>
@@ -71,12 +64,12 @@ const ChooseModeScreen = () => {
                     marginTop={37}
                     fontWeight="600"
                     onPress={() =>
-                        navigation.navigate("LogonStack", {
-                            screen: "Login",
+                        navigation.navigate('LogonStack', {
+                            screen: 'Login',
                         })
                     }
                 >
-                    Continue
+                    Continuar
                 </DsButton>
             </DsFlex>
         </DsBox>

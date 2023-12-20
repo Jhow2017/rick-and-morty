@@ -34,6 +34,7 @@ const DsButton: React.FC<DsButtonProps> = (props) => {
         alignItems: 'center',
         justifyContent: 'center',
         width:
+            attr?.width ||
             (size === 'small' && 120) ||
             (size === 'medium' && 220) ||
             (size === 'large' && 329) ||
