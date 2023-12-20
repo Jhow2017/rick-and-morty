@@ -2,8 +2,9 @@
 
 Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação.
 
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/jhowgama/r)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/jhowgama/)
 [![linkedin](https://img.shields.io/badge/linkedin-9146FF?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jonathan-gama-2365a4187/)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://www.facebook.com/jhowgama/)
 
 ## Technologies used in the test
 
@@ -27,7 +28,7 @@ Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da
 <div style="display: inline_block">
 
 [![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/scXx0MdEOMnmHIhIF1nagE/React-design-(Rick-%26-Morty-API)-(Community)?node-id=99%3A1133&mode=dev>)
-[![Figma](https://img.shields.io/badge/figma-%9146FF.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/scXx0MdEOMnmHIhIF1nagE/React-design-(Rick-%26-Morty-API)-(Community)?node-id=99%3A1133&mode=dev>)
+[![Figma](https://img.shields.io/badge/figma-%9146FF.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/tPPlXmcSEciLFbEZ4o8xm6/Spotify-Redesign---Free-Ui-Kit-(Dark-Mode)-(Community)?mode=dev>)
 
 </div>
 
