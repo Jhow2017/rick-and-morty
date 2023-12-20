@@ -57,6 +57,16 @@ const DsInput = forwardRef<TextInput, DsInputProps>(
                             onPress={() => setShowPassword((prev) => !prev)}
                         />
                     )}
+
+                    {type === 'search' && (
+                        <DsIcon
+                            icon={'search'}
+                            position="absolute"
+                            size={26}
+                            right={30}
+                            color={'#5B5B5B'}
+                        />
+                    )}
                 </DsFlex>
                 {error && (
                     <DsText color={'red'} marginTop={16}>
