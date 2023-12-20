@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { Platform, View } from 'react-native';
 
 // querys
 import { GET_LIST_RICK_AND_MORTY } from 'src/services/querys/list-rick-and-morty';

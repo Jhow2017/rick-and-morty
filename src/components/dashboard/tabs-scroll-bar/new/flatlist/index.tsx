@@ -9,6 +9,7 @@ import { DsText } from '@ds/components/typography';
 // types
 import { Result } from 'src/models/list-rick-and-morty.types';
 import ModalDetailsItem from '../modal-details';
+import { useListStore } from 'src/store/listStore';
 
 interface ListInfoRickAndMortyProps {
     listTableCharacter: Result[] | undefined;
@@ -16,8 +17,8 @@ interface ListInfoRickAndMortyProps {
 const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
     listTableCharacter,
 }) => {
-    const [modalVisible, setModalVisible] = useState(false);
-    const [selectedItem, setSelectedItem] = useState<Result>();
+    const { modalVisible, selectedItem, setModalVisible, setSelectedItem } =
+        useListStore();
 
     const openModal = (item: Result) => {
         setSelectedItem(item);
@@ -110,7 +111,7 @@ const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
             />
 
             <DsModal visible={modalVisible} closeModal={closeModal} width={370}>
-                <ModalDetailsItem selectedItem={selectedItem} />
+                <ModalDetailsItem />
             </DsModal>
         </>
     );

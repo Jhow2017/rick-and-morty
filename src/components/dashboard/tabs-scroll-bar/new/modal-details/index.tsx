@@ -1,17 +1,11 @@
-// types
-import { Result } from 'src/models/list-rick-and-morty.types';
-
 //@Ds
 import { DsBox, DsFlex } from '@ds/layout';
 import { DsDivider, DsImage } from '@ds/components/global';
 import { DsText } from '@ds/components/typography';
+import { useListStore } from 'src/store/listStore';
 
-interface ModalDetailsItemProps {
-    selectedItem: Result | undefined;
-}
-const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
-    selectedItem,
-}) => {
+const ModalDetailsItem: React.FC = () => {
+    const { selectedItem } = useListStore();
     return (
         <DsBox width={'100%'}>
             <DsBox>
