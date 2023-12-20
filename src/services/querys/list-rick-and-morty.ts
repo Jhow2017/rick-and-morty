@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const GET_LIST_RICK_AND_MORTY = gql`
-    query {
-        characters(page: 2, filter: { name: "Morty" }) {
+    query GetListRickAndMorty($page: Int, $filter: FilterCharacter) {
+        characters(page: $page, filter: $filter) {
             info {
                 count
             }
