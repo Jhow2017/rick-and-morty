@@ -1,22 +1,36 @@
-import React from "react";
-import { Image, ImageProps, FlexStyle, ImageStyle } from "react-native";
+import React from 'react';
+import { Image, ImageProps, FlexStyle, ImageStyle } from 'react-native';
 
-//@ts-ignore
-interface DsImageType extends ImageProps, ImageStyle, FlexStyle {
-    width?: number | undefined;
-    height?: number | undefined;
+type ImageStyleWithoutConflicts = Omit<
+    ImageStyle,
+    | 'borderBottomLeftRadius'
+    | 'borderBottomRightRadius'
+    | 'borderRadius'
+    | 'borderTopLeftRadius'
+    | 'borderTopRightRadius'
+    | 'overflow'
+>;
+
+interface DsImageType
+    extends Omit<ImageProps, 'height'>,
+        ImageStyleWithoutConflicts,
+        FlexStyle {
+    width?: any;
+    height?: any;
 }
 
 const DsImage: React.FC<DsImageType> = (props) => {
+    const { width, height, style, ...rest } = props;
+
     return (
         <Image
             objectFit="cover"
-            {...props}
+            {...rest}
             style={[
-                props.style,
+                style,
                 {
-                    width: props.width || "100%",
-                    height: props.height || "100%",
+                    width: width || '100%',
+                    height: height || '100%',
                 },
             ]}
         />
