@@ -16,7 +16,7 @@ import DsInput from '@ds/components/form/input';
 //components
 import ListInfoRickAndMorty from './flatlist';
 
-const NewFlatList = () => {
+const HomeListCharacters = () => {
     const [nameFilter, setNameFilter] = useState('');
 
     const { data, loading, error } = useQuery<ListRickAndMorty>(
@@ -77,4 +77,4 @@ const NewFlatList = () => {
     );
 };
 
-export default NewFlatList;
+export default HomeListCharacters;
