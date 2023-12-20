@@ -3,15 +3,13 @@ import { ScrollView, View } from 'react-native';
 
 //@Ds
 import { DsBox } from '@ds/layout';
+import { DsText } from '@ds/components/typography';
 
 //components
 import Header from '@components/header';
 import LayoutPublic from '@components/layout/public';
 import DsScrollTab from '@components/shared/tab-scroll/nidex';
-
-//images
 import HomeListCharacters from '@components/dashboard/tabs-scroll-bar/new';
-import { DsText } from '@ds/components/typography';
 
 const HomeScreen = () => {
     const [activeTab, setActiveTab] = useState(0);
