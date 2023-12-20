@@ -37,7 +37,6 @@ const HomeListCharacters = () => {
     const nameValue = watch('nameFilter');
 
     const onChangeSearchText = (text: string) => {
-        console.log('text', text);
         setValue('nameFilter', text);
     };
 
@@ -78,19 +77,6 @@ const HomeListCharacters = () => {
                     disabled={errors?.nameFilter?.message}
                     error={errors?.nameFilter?.message}
                 />
-
-                {/* <DsButton
-                    variant="secondary"
-                    size="large"
-                    paddingHorizontal={36}
-                    fontWeight="700"
-                    lineHeight={22}
-                    borderRadius={30}
-                    marginTop={22}
-                    onPress={handleSubmit(onSubmit)}
-                >
-                    Sign In
-                </DsButton> */}
 
                 {loading && (
                     <DsText
