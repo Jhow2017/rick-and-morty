@@ -49,7 +49,7 @@ const Navigation = () => {
 
     useEffect(() => {
         const simulateLoadingAsync = async () => {
-            await simulateLoading(3000);
+            await simulateLoading(6000);
             setIsLoading(false);
         };
 
