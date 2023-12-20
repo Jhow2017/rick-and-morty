@@ -109,17 +109,8 @@ const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
                 )}
             />
 
-            <DsModal
-                visible={modalVisible}
-                onClose={closeModal}
-                padding={16}
-                height={500}
-            >
-                <ModalDetailsItem
-                    selectedItem={selectedItem}
-                    modalVisible={modalVisible}
-                    setModalVisible={setModalVisible}
-                />
+            <DsModal visible={modalVisible} closeModal={closeModal} width={370}>
+                <ModalDetailsItem selectedItem={selectedItem} />
             </DsModal>
         </>
     );

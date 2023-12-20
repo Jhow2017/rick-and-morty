@@ -1,5 +1,3 @@
-import { TouchableOpacity } from 'react-native';
-
 // types
 import { Result } from 'src/models/list-rick-and-morty.types';
 
@@ -10,27 +8,21 @@ import { DsText } from '@ds/components/typography';
 
 interface ModalDetailsItemProps {
     selectedItem: Result | undefined;
-    modalVisible: boolean;
-    setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
     selectedItem,
-    modalVisible,
-    setModalVisible,
 }) => {
     return (
-        <DsBox
-            backgroundColor="white"
-            padding={20}
-            borderRadius={10}
-            width={'100%'}
-            height={'100%'}
-        >
-            <DsImage
-                source={{ uri: selectedItem?.image }}
-                resizeMode="cover"
-                height={185}
-            />
+        <DsBox width={'100%'}>
+            <DsBox>
+                <DsImage
+                    source={{
+                        uri: selectedItem?.image,
+                    }}
+                    resizeMode="cover"
+                    height={300}
+                />
+            </DsBox>
             <DsText
                 color="#4D4D4D"
                 fontSize={14}
@@ -52,19 +44,6 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
             >
                 {selectedItem?.status}
             </DsText>
-
-            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-                <DsText
-                    color="blue"
-                    fontSize={14}
-                    fontFamily="Inter_300Light"
-                    textTransform="capitalize"
-                    numberOfLines={1}
-                    ellipsizeMode="tail"
-                >
-                    Fechar
-                </DsText>
-            </TouchableOpacity>
         </DsBox>
     );
 };
