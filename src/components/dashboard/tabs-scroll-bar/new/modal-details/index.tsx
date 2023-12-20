@@ -1,16 +1,12 @@
+import { TouchableOpacity } from 'react-native';
+
+// types
+import { Result } from 'src/models/list-rick-and-morty.types';
+
 //@Ds
 import { DsBox } from '@ds/layout';
-
-//components
-import Header from '@components/header';
 import { DsImage } from '@ds/components/global';
-
-//images
-import CoverNowPlaying from '@images/dashboard/now-playing.png';
-import LayoutPrivate from '@components/layout/private';
 import { DsText } from '@ds/components/typography';
-import { Image, TouchableOpacity } from 'react-native';
-import { Result } from 'src/models/list-rick-and-morty.types';
 
 interface ModalDetailsItemProps {
     selectedItem: Result | undefined;
@@ -30,7 +26,7 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
             width={'100%'}
             height={'100%'}
         >
-            <Image
+            <DsImage
                 source={{ uri: selectedItem?.image }}
                 resizeMode="cover"
                 height={185}
