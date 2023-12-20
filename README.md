@@ -16,9 +16,9 @@ Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da
     <img align="center" alt="react" src="https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
     <img align="center" alt="react" src="https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37" />   
     <img align="center" alt="react" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
-    <img align="center" alt="react" src="https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql" />
-
-![others](https://img.shields.io/badge/others-9146FF?style=for-the-badge&logo=others&logoColor=white)
+    <img align="center" alt="react" src="https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white" />   
+    <img align="center" alt="Zod" src="https://img.shields.io/badge/ZOD-9146FF?style=for-the-badge&logo=ZOD&logoColor=white" />
+      <img align="center" alt="Zustand" src="https://img.shields.io/badge/zustand-007ACC?style=for-the-badge&logo=ZOD&logoColor=white" />
 
 </div>
 
