@@ -37,7 +37,7 @@ const DsInput = forwardRef<TextInput, DsInputProps>(
                             ...(attr.style as ViewStyle),
                             width: attr?.width ?? '100%',
                             height: attr?.height,
-                            borderRadius: attr?.borderRadius ?? 30,
+                            borderRadius: attr?.borderRadius ?? 10,
                             borderWidth: attr?.borderWidth ?? 1,
                             borderColor: attr?.borderColor ?? '#363535',
                             color: attr?.color ?? '#fff',

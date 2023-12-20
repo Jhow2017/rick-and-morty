@@ -1,12 +1,12 @@
-import { ScrollView } from "react-native";
+import { ScrollView } from 'react-native';
 
 //@Ds
-import { DsFlex } from "@ds/layout";
+import { DsFlex } from '@ds/layout';
+import { DsText } from '@ds/components/typography';
 
 //components
-import Header from "src/components/header";
-import LayoutPublic from "@components/layout/public";
-import { DsText } from "@ds/components/typography";
+import Header from 'src/components/header';
+import LayoutPublic from '@components/layout/public';
 
 const ProfileScreen = () => {
     return (

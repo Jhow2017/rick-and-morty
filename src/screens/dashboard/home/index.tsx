@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Platform, ScrollView, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 //@Ds
 import { DsBox } from '@ds/layout';
@@ -24,11 +24,7 @@ const HomeScreen = () => {
             }}
         >
             <LayoutPublic paddingHorizontal={0} backgroundColor={'#0F3A40'}>
-                <Header
-                    sizeLogo={120}
-                    marginTop={Platform.OS === 'ios' ? 10 : 20}
-                    paddingHorizontal={8}
-                />
+                <Header sizeLogo={120} paddingHorizontal={24} />
 
                 <DsBox marginTop={16} flex={1} width={'100%'}>
                     <DsScrollTab
