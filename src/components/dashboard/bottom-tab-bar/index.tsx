@@ -1,27 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
     View,
     TouchableOpacity,
     Dimensions,
     Animated,
     Platform,
-} from "react-native";
-import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+} from 'react-native';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+
+// types
+import type { IconsType } from '@ds/components/global/icon';
+
+// hooks
+import useCheckOpenKeyboard from 'src/hook/useKeyboard';
 
 //@Ds
-import { DsBox } from "@ds/layout";
+import { DsBox } from '@ds/layout';
 
 //components
-import BottomMenuItem from "@components/dashboard/bottom-menu-item";
-import { IconsType } from "@ds/components/global/icon";
+import BottomMenuItem from '@components/dashboard/bottom-menu-item';
 
 export const TabBar = ({
     state,
     descriptors,
     navigation,
 }: BottomTabBarProps) => {
+    const isKeyboardOpen = useCheckOpenKeyboard();
+
     const [translateValue] = useState(new Animated.Value(0));
-    const totalWidth = Dimensions.get("window").width;
+    const totalWidth = Dimensions.get('window').width;
     const tabWidth = totalWidth / state.routes.length;
 
     const sliderWidth = tabWidth - 65;
@@ -40,10 +47,10 @@ export const TabBar = ({
 
     return (
         <DsBox
-            height={Platform.OS === "ios" ? 90 : 73}
-            backgroundColor={"#343434"}
-            position={"absolute"}
-            bottom={Platform.OS === "ios" ? -7 : 0}
+            height={isKeyboardOpen ? 0 : Platform.OS === 'ios' ? 90 : 73}
+            backgroundColor={'#343434'}
+            position={'absolute'}
+            bottom={Platform.OS === 'ios' ? -7 : 0}
             style={[
                 {
                     shadowOffset: {
@@ -57,16 +64,16 @@ export const TabBar = ({
                 },
             ]}
         >
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: 'row' }}>
                 <Animated.View
                     style={{
                         transform: [{ translateX: translateValue }],
                         width: sliderWidth,
                         left: (tabWidth - sliderWidth) / 65,
                         height: 5,
-                        position: "absolute",
+                        position: 'absolute',
                         top: 0,
-                        backgroundColor: "#42C83C",
+                        backgroundColor: '#42C83C',
                         borderBottomRightRadius: 20,
                         borderBottomLeftRadius: 20,
                     }}
@@ -75,25 +82,25 @@ export const TabBar = ({
                 {state.routes.map((route, index) => {
                     const { options } = descriptors[route.key];
                     const isFocused = state.index === index;
-                    let nameIcon: IconsType = "home";
+                    let nameIcon: IconsType = 'home';
 
-                    if (route.name === "Home") {
-                        nameIcon = isFocused ? "home-active" : "home";
-                    } else if (route.name === "Search") {
-                        nameIcon = isFocused ? "search-active" : "search";
-                    } else if (route.name === "Favorite") {
+                    if (route.name === 'Home') {
+                        nameIcon = isFocused ? 'home-active' : 'home';
+                    } else if (route.name === 'Search') {
+                        nameIcon = isFocused ? 'search-active' : 'search';
+                    } else if (route.name === 'Favorite') {
                         nameIcon = isFocused
-                            ? "favorite-active"
-                            : "favorite-outline";
-                    } else if (route.name === "Profile") {
+                            ? 'favorite-active'
+                            : 'favorite-outline';
+                    } else if (route.name === 'Profile') {
                         nameIcon = isFocused
-                            ? "profile-active"
-                            : "profile-outline";
+                            ? 'profile-active'
+                            : 'profile-outline';
                     }
 
                     const onPress = () => {
                         const event = navigation.emit({
-                            type: "tabPress",
+                            type: 'tabPress',
                             target: route.key,
                             canPreventDefault: true,
                         });
@@ -107,7 +114,7 @@ export const TabBar = ({
 
                     const onLongPress = () => {
                         navigation.emit({
-                            type: "tabLongPress",
+                            type: 'tabLongPress',
                             target: route.key,
                         });
                     };
