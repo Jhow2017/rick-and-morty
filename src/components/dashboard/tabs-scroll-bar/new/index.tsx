@@ -1,5 +1,7 @@
-import { useState } from 'react';
 import { useQuery } from '@apollo/client';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import z from 'zod';
 
 // querys
 import { GET_LIST_RICK_AND_MORTY } from 'src/services/querys/list-rick-and-morty';
@@ -15,15 +17,36 @@ import DsInput from '@ds/components/form/input';
 //components
 import ListInfoRickAndMorty from './flatlist';
 
+const schema = z.object({
+    nameFilter: z.string().min(3),
+});
+
+type FormValues = z.TypeOf<typeof schema>;
+
 const HomeListCharacters = () => {
-    const [nameFilter, setNameFilter] = useState('');
+    const {
+        register,
+        setValue,
+        watch,
+        formState: { errors },
+    } = useForm<FormValues>({
+        resolver: zodResolver(schema),
+        mode: 'onBlur',
+    });
+
+    const nameValue = watch('nameFilter');
+
+    const onChangeSearchText = (text: string) => {
+        console.log('text', text);
+        setValue('nameFilter', text);
+    };
 
     const { data, loading, error } = useQuery<ListRickAndMorty>(
         GET_LIST_RICK_AND_MORTY,
         {
             variables: {
                 page: 1,
-                filter: { name: nameFilter ?? 'Morty' },
+                filter: { name: nameValue },
             },
         }
     );
@@ -45,14 +68,29 @@ const HomeListCharacters = () => {
         <DsBox gap={24}>
             <DsFlex flexDirection="column" paddingHorizontal={24}>
                 <DsInput
+                    {...register('nameFilter')}
                     placeholder="Encontre um personagem"
-                    value={nameFilter}
-                    onChangeText={(text) => setNameFilter(text)}
+                    onChangeText={onChangeSearchText}
                     type={'search'}
                     size={'small'}
                     backgroundColor={'#407772'}
                     placeholderTextColor="#fff"
+                    disabled={errors?.nameFilter?.message}
+                    error={errors?.nameFilter?.message}
                 />
+
+                {/* <DsButton
+                    variant="secondary"
+                    size="large"
+                    paddingHorizontal={36}
+                    fontWeight="700"
+                    lineHeight={22}
+                    borderRadius={30}
+                    marginTop={22}
+                    onPress={handleSubmit(onSubmit)}
+                >
+                    Sign In
+                </DsButton> */}
 
                 {loading && (
                     <DsText

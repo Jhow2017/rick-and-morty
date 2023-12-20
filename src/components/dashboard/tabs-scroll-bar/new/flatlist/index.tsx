@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { FlatList, TouchableOpacity } from 'react-native';
 
 //@Ds
@@ -17,8 +16,7 @@ interface ListInfoRickAndMortyProps {
 const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
     listTableCharacter,
 }) => {
-    const { modalVisible, selectedItem, setModalVisible, setSelectedItem } =
-        useListStore();
+    const { modalVisible, setModalVisible, setSelectedItem } = useListStore();
 
     const openModal = (item: Result) => {
         setSelectedItem(item);
