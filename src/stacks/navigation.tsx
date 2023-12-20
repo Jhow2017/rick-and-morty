@@ -20,7 +20,6 @@ import {
     RegisterScreen,
     LoginScreen,
 } from '@screens/index';
-import NowPlaying from '@components/dashboard/tabs-scroll-bar/new/now-playing';
 
 const Stack = createStackNavigator();
 
@@ -75,11 +74,6 @@ const Navigation = () => {
                         <Stack.Screen
                             name="LogonStack"
                             component={LogonStack}
-                        />
-
-                        <Stack.Screen
-                            name="NowPlaying"
-                            component={NowPlaying}
                         />
 
                         <Stack.Screen

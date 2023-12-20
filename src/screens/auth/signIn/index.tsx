@@ -54,7 +54,7 @@ const SignInScreen = () => {
                 flexGrow: 1,
             }}
         >
-            <LayoutPublic paddingBottom={74}>
+            <LayoutPublic paddingBottom={74} backgroundColor={'#0F3A40'}>
                 <Header marginTop={Platform.OS === 'ios' ? 64 : 32} />
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                     <DsFlex marginTop={80} flexDirection="column">
@@ -98,6 +98,7 @@ const SignInScreen = () => {
                                         id="username"
                                         onChangeText={field.onChange}
                                         value={field.value}
+                                        placeholderTextColor={'#fff'}
                                         placeholder="Nome ou e-mail"
                                         error={
                                             errors.username &&
@@ -118,6 +119,7 @@ const SignInScreen = () => {
                                         value={field.value}
                                         type="password"
                                         placeholder="Senha"
+                                        placeholderTextColor={'#fff'}
                                         error={
                                             errors.password &&
                                             errors.password.message
@@ -128,7 +130,7 @@ const SignInScreen = () => {
                         </DsFlex>
 
                         <DsText
-                            color="#A0A0A0"
+                            color="#fff"
                             fontSize={17}
                             lineHeight={25}
                             fontWeight="400"

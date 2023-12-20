@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { FlatList, Modal, Text, View, TouchableOpacity } from 'react-native';
+import { FlatList, TouchableOpacity } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-import { Image } from 'react-native';
 
 //@Ds
 import { DsBox, DsFlex } from '@ds/layout';
+import { DsImage, DsModal } from '@ds/components/global';
 import { DsText } from '@ds/components/typography';
 
 // types
@@ -27,6 +27,10 @@ const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
         setModalVisible(true);
     };
 
+    const closeModal = () => {
+        setModalVisible(false);
+    };
+
     return (
         <>
             <FlatList
@@ -46,7 +50,7 @@ const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
                     >
                         <DsFlex flexDirection="column" width={150}>
                             <DsBox>
-                                <Image
+                                <DsImage
                                     source={{
                                         uri: item?.image,
                                     }}
@@ -108,42 +112,51 @@ const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
                 )}
             />
 
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    setModalVisible(!modalVisible);
-                }}
-            >
-                <View
-                    style={{
-                        flex: 1,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    }}
+            <DsModal visible={modalVisible} onClose={closeModal}>
+                <DsBox
+                    backgroundColor="white"
+                    padding={20}
+                    borderRadius={10}
+                    width={300}
                 >
-                    <View
-                        style={{
-                            backgroundColor: 'white',
-                            padding: 20,
-                            borderRadius: 10,
-                            width: 300,
-                        }}
+                    <DsText
+                        color="#4D4D4D"
+                        fontSize={14}
+                        fontFamily="Inter_300Light"
+                        textTransform="capitalize"
+                        numberOfLines={1}
+                        ellipsizeMode="tail"
                     >
-                        {/* Adicione aqui as informações detalhadas do selectedItem */}
-                        <Text>{selectedItem?.name}</Text>
-                        <Text>{selectedItem?.status}</Text>
+                        {selectedItem?.name}
+                    </DsText>
 
-                        <TouchableOpacity
-                            onPress={() => setModalVisible(!modalVisible)}
+                    <DsText
+                        color="#4D4D4D"
+                        fontSize={14}
+                        fontFamily="Inter_300Light"
+                        textTransform="capitalize"
+                        numberOfLines={1}
+                        ellipsizeMode="tail"
+                    >
+                        {selectedItem?.status}
+                    </DsText>
+
+                    <TouchableOpacity
+                        onPress={() => setModalVisible(!modalVisible)}
+                    >
+                        <DsText
+                            color="blue"
+                            fontSize={14}
+                            fontFamily="Inter_300Light"
+                            textTransform="capitalize"
+                            numberOfLines={1}
+                            ellipsizeMode="tail"
                         >
-                            <Text style={{ color: 'blue' }}>Fechar</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </Modal>
+                            Fechar
+                        </DsText>
+                    </TouchableOpacity>
+                </DsBox>
+            </DsModal>
         </>
     );
 };

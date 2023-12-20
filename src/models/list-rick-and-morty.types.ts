@@ -18,6 +18,7 @@ export interface Info {
 }
 
 export interface Result {
+    id?: string;
     name: string;
     status: string;
     image: string;

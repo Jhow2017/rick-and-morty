@@ -7,6 +7,7 @@ export const GET_LIST_RICK_AND_MORTY = gql`
                 count
             }
             results {
+                id
                 name
                 status
                 image

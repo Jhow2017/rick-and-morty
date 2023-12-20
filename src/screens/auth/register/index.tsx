@@ -63,7 +63,7 @@ const RegisterScreen = () => {
                 flexGrow: 1,
             }}
         >
-            <LayoutPublic paddingBottom={74}>
+            <LayoutPublic paddingBottom={74} backgroundColor={'#0F3A40'}>
                 <Header marginTop={Platform.OS === 'ios' ? 64 : 32} />
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                     <DsFlex marginTop={47} flexDirection="column">
@@ -108,6 +108,7 @@ const RegisterScreen = () => {
                                         onChangeText={field.onChange}
                                         value={field.value}
                                         placeholder="Nome Completo"
+                                        placeholderTextColor={'#fff'}
                                         error={
                                             errors.fullName &&
                                             errors.fullName.message
@@ -127,6 +128,7 @@ const RegisterScreen = () => {
                                         onChangeText={field.onChange}
                                         value={field.value}
                                         placeholder="E-mail"
+                                        placeholderTextColor={'#fff'}
                                         error={
                                             errors.email && errors.email.message
                                         }
@@ -145,6 +147,7 @@ const RegisterScreen = () => {
                                         value={field.value}
                                         type="password"
                                         placeholder="Senha"
+                                        placeholderTextColor={'#fff'}
                                         error={
                                             errors.password &&
                                             errors.password.message
