@@ -31,12 +31,6 @@ Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da
 
 </div>
 
-<!-- ## Comments:
-1° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/>
-2° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/>
-3° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/>
-4° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/> -->
-
 ## My Tech Stack
 
 <div style="display: inline_block">
