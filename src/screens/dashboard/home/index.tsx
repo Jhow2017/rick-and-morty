@@ -10,7 +10,7 @@ import LayoutPublic from '@components/layout/public';
 import DsScrollTab from '@components/shared/tab-scroll/nidex';
 
 //images
-import NewFlatList from '@components/dashboard/tabs-scroll-bar/new';
+import HomeListCharacters from '@components/dashboard/tabs-scroll-bar/new';
 import { DsText } from '@ds/components/typography';
 
 const HomeScreen = () => {
@@ -35,7 +35,7 @@ const HomeScreen = () => {
                         }}
                     >
                         <DsBox marginTop={24}>
-                            {activeTab === 0 && <NewFlatList />}
+                            {activeTab === 0 && <HomeListCharacters />}
                             {activeTab === 1 && (
                                 <View
                                     style={{
