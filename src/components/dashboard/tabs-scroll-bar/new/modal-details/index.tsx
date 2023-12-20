@@ -58,10 +58,14 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                     flexDirection="column"
                 >
                     {selectedItem?.status && (
-                        <DsFlex flexDirection="row" gap={12}>
+                        <DsFlex
+                            flexDirection="row"
+                            gap={12}
+                            alignItems="center"
+                        >
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={24}
                                 fontFamily="Inter_700Bold"
                                 textAlign="left"
                             >
@@ -69,7 +73,7 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                             </DsText>
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={20}
                                 fontFamily="Inter_400Regular"
                             >
                                 {selectedItem?.status}
@@ -78,10 +82,14 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                     )}
 
                     {selectedItem?.species && (
-                        <DsFlex flexDirection="row" gap={12}>
+                        <DsFlex
+                            flexDirection="row"
+                            gap={12}
+                            alignItems="center"
+                        >
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={24}
                                 fontFamily="Inter_700Bold"
                                 textAlign="left"
                             >
@@ -89,7 +97,7 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                             </DsText>
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={20}
                                 fontFamily="Inter_400Regular"
                             >
                                 {selectedItem?.species}
@@ -98,10 +106,14 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                     )}
 
                     {selectedItem?.gender && (
-                        <DsFlex flexDirection="row" gap={12}>
+                        <DsFlex
+                            flexDirection="row"
+                            gap={12}
+                            alignItems="center"
+                        >
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={24}
                                 fontFamily="Inter_700Bold"
                                 textAlign="left"
                             >
@@ -109,7 +121,7 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                             </DsText>
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={20}
                                 fontFamily="Inter_400Regular"
                             >
                                 {selectedItem?.gender}
@@ -118,10 +130,14 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                     )}
 
                     {selectedItem?.origin?.name && (
-                        <DsFlex flexDirection="row" gap={12}>
+                        <DsFlex
+                            flexDirection="row"
+                            gap={12}
+                            alignItems="center"
+                        >
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={24}
                                 fontFamily="Inter_700Bold"
                                 textAlign="left"
                             >
@@ -129,8 +145,11 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                             </DsText>
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={20}
                                 fontFamily="Inter_400Regular"
+                                numberOfLines={1}
+                                ellipsizeMode="tail"
+                                width={'70%'}
                             >
                                 {selectedItem?.origin?.name}
                             </DsText>
@@ -138,10 +157,14 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                     )}
 
                     {selectedItem?.type && (
-                        <DsFlex flexDirection="row" gap={12}>
+                        <DsFlex
+                            flexDirection="row"
+                            gap={12}
+                            alignItems="center"
+                        >
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={24}
                                 fontFamily="Inter_700Bold"
                                 textAlign="left"
                             >
@@ -149,7 +172,7 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                             </DsText>
                             <DsText
                                 color="#4D4D4D"
-                                fontSize={26}
+                                fontSize={20}
                                 fontFamily="Inter_400Regular"
                             >
                                 {selectedItem?.type}
