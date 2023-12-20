@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ScrollView } from 'react-native';
+import { Platform, ScrollView, View } from 'react-native';
 
 //@Ds
 import { DsBox } from '@ds/layout';
@@ -11,6 +11,7 @@ import DsScrollTab from '@components/shared/tab-scroll/nidex';
 
 //images
 import NewFlatList from '@components/dashboard/tabs-scroll-bar/new';
+import { DsText } from '@ds/components/typography';
 
 const HomeScreen = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -23,9 +24,13 @@ const HomeScreen = () => {
             }}
         >
             <LayoutPublic paddingHorizontal={0} backgroundColor={'#0F3A40'}>
-                <Header marginTop={30} sizeLogo={150} paddingHorizontal={8} />
+                <Header
+                    sizeLogo={120}
+                    marginTop={Platform.OS === 'ios' ? 10 : 20}
+                    paddingHorizontal={8}
+                />
 
-                <DsBox marginTop={42} flex={1}>
+                <DsBox marginTop={16} flex={1} width={'100%'}>
                     <DsScrollTab
                         tabs={['Personagens', 'Novo']}
                         onTabChange={setActiveTab}
@@ -33,11 +38,26 @@ const HomeScreen = () => {
                             paddingHorizontal: 24,
                         }}
                     >
-                        <DsBox marginTop={32}>
+                        <DsBox marginTop={24}>
                             {activeTab === 0 && <NewFlatList />}
-                            {activeTab === 1 && <NewFlatList />}
-                            {activeTab === 2 && <NewFlatList />}
-                            {activeTab === 3 && <NewFlatList />}
+                            {activeTab === 1 && (
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    <DsText
+                                        color="red"
+                                        fontFamily="Inter_700Bold"
+                                        fontSize={19}
+                                        textTransform="capitalize"
+                                    >
+                                        Alguma coisa aqu
+                                    </DsText>
+                                </View>
+                            )}
                         </DsBox>
                     </DsScrollTab>
                 </DsBox>

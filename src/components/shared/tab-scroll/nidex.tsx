@@ -49,7 +49,7 @@ const DsScrollTab: React.FC<DsScrollTabProps> = ({
                             width={'auto'}
                             height={'auto'}
                             padding={0}
-                            fontSize={20}
+                            fontSize={18}
                             fontWeight="600"
                             color={activeTab === index ? '#DBDBDB' : '#616161'}
                         >

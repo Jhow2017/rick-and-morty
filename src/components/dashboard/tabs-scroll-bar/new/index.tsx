@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { View, KeyboardAvoidingView, Platform } from 'react-native';
+import { Platform, View } from 'react-native';
 
 // querys
 import { GET_LIST_RICK_AND_MORTY } from 'src/services/querys/list-rick-and-morty';
@@ -9,7 +9,7 @@ import { GET_LIST_RICK_AND_MORTY } from 'src/services/querys/list-rick-and-morty
 import { ListRickAndMorty } from 'src/models/list-rick-and-morty.types';
 
 // designer-system
-import { DsBox } from '@ds/layout';
+import { DsBox, DsFlex } from '@ds/layout';
 import { DsText } from '@ds/components/typography';
 import DsInput from '@ds/components/form/input';
 
@@ -29,29 +29,31 @@ const NewFlatList = () => {
         }
     );
 
-    return (
-        <DsBox>
-            <KeyboardAvoidingView
-                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : -150}
-                style={{ flex: 1 }}
+    {
+        error && (
+            <DsText
+                color="red"
+                fontFamily="Inter_700Bold"
+                fontSize={19}
+                textTransform="capitalize"
             >
-                <View
-                    style={{
-                        flex: 1,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
-                    <DsInput
-                        placeholder="Digite o nome"
-                        value={nameFilter}
-                        onChangeText={(text) => setNameFilter(text)}
-                        type={'search'}
-                        size={'small'}
-                        TypeInput="flat"
-                    />
-                </View>
+                {error.message}
+            </DsText>
+        );
+    }
+
+    return (
+        <DsBox gap={24}>
+            <DsFlex flexDirection="column" paddingHorizontal={24}>
+                <DsInput
+                    placeholder="Encontre um personagem"
+                    value={nameFilter}
+                    onChangeText={(text) => setNameFilter(text)}
+                    type={'search'}
+                    size={'small'}
+                    backgroundColor={'#407772'}
+                    placeholderTextColor="#fff"
+                />
 
                 {loading && (
                     <DsText
@@ -63,22 +65,14 @@ const NewFlatList = () => {
                         Carregando...
                     </DsText>
                 )}
-                {error && (
-                    <DsText
-                        color="red"
-                        fontFamily="Inter_700Bold"
-                        fontSize={19}
-                        textTransform="capitalize"
-                    >
-                        {error.message}
-                    </DsText>
+            </DsFlex>
+            <DsBox marginBottom={100}>
+                {data && (
+                    <ListInfoRickAndMorty
+                        listTableCharacter={data?.characters?.results}
+                    />
                 )}
-            </KeyboardAvoidingView>
-            {data && (
-                <ListInfoRickAndMorty
-                    listTableCharacter={data?.characters?.results}
-                />
-            )}
+            </DsBox>
         </DsBox>
     );
 };

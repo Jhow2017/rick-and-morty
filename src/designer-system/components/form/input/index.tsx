@@ -35,8 +35,8 @@ const DsInput = forwardRef<TextInput, DsInputProps>(
                         secureTextEntry={type === 'password' && !showPassword}
                         style={{
                             ...(attr.style as ViewStyle),
-                            width: attr?.width ?? 334,
-                            height: attr?.height ?? 80,
+                            width: attr?.width ?? '100%',
+                            height: attr?.height,
                             borderRadius: attr?.borderRadius ?? 30,
                             borderWidth: attr?.borderWidth ?? 1,
                             borderColor: attr?.borderColor ?? '#363535',
@@ -44,7 +44,8 @@ const DsInput = forwardRef<TextInput, DsInputProps>(
                             fontSize: attr?.fontSize ?? 16,
                             fontStyle: attr?.fontStyle ?? 'normal',
                             fontWeight: attr?.fontWeight ?? '700',
-                            padding: attr?.padding ?? 30,
+                            padding: attr?.padding ?? 16,
+                            fontFamily: attr?.fontFamily ?? 'Inter_400Regular',
                         }}
                     />
                     {type === 'password' && (
@@ -64,7 +65,7 @@ const DsInput = forwardRef<TextInput, DsInputProps>(
                             position="absolute"
                             size={26}
                             right={30}
-                            color={'#5B5B5B'}
+                            color={'#fff'}
                         />
                     )}
                 </DsFlex>
