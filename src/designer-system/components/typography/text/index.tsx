@@ -17,7 +17,7 @@ type DsTextProps = TextStyle &
 const StyledText = styled.Text<DsTextProps>``;
 
 const DsText: React.FC<DsTextProps> = (props) => {
-    const { children, ...attr } = props;
+    const { children, numberOfLines, ellipsizeMode, ...attr } = props;
 
     return (
         <StyledText
