@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+// ctx
+import { GraphQLProvider } from 'src/ctx/GraphQLProvider';
+
 //utils
-import { simulateLoading } from 'src/services/utils/simulateLoading';
+import { simulateLoading } from 'src/utils/simulateLoading';
 
 //components
 import Loading from 'src/components/loading';
 
 //screens
-
 import { AppTabsStack } from 'src/stacks/bottom-menu';
 import {
     ChooseModeScreen,
@@ -19,7 +21,6 @@ import {
     LoginScreen,
 } from '@screens/index';
 import NowPlaying from '@components/dashboard/tabs-scroll-bar/new/now-playing';
-import { GraphQLProvider } from 'src/ctx/GraphQLProvider';
 
 const Stack = createStackNavigator();
 

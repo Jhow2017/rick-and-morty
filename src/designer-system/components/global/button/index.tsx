@@ -10,7 +10,7 @@ import {
 //components
 import { DsText } from '@ds/components/typography';
 import DsIcon, { IconsType } from '@ds/components/global/icon';
-import { filterProps } from 'src/services/utils/filterProps';
+import { filterProps } from 'src/utils/filterProps';
 
 interface DsButtonProps extends TouchableOpacityProps, TextStyle, ViewStyle {
     children: React.ReactNode;

@@ -1,67 +1,25 @@
-import { FlatList, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { FlatList, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Image } from 'react-native';
 
 //@Ds
-import { DsBox, DsFlex } from "@ds/layout";
-import { DsText } from "@ds/components/typography";
-import { DsImage } from "@ds/components/global";
+import { DsBox, DsFlex } from '@ds/layout';
+import { DsText } from '@ds/components/typography';
 
-//images
-import CoverMusic01 from "@images/dashboard/cover-music-01.png";
-import CoverMusic02 from "@images/dashboard/cover-music-02.png";
-import CoverMusic03 from "@images/dashboard/cover-music-03.png";
+// types
+import { Result } from 'src/models/list-rick-and-morty.types';
 
-type Items = {
-    id: number;
-    cover: any;
-    title: string;
-    description: string;
-};
-
-const listMusic: Items[] = [
-    {
-        id: 1,
-        cover: CoverMusic01,
-        title: "Bad Guy",
-        description: "Billie Eilish",
-    },
-    {
-        id: 2,
-        cover: CoverMusic02,
-        title: "Scorpion",
-        description: "Drake",
-    },
-    {
-        id: 3,
-        cover: CoverMusic03,
-        title: "WHEN WE ALL",
-        description: "Billie Eilish",
-    },
-    {
-        id: 4,
-        cover: CoverMusic01,
-        title: "Bad Guy",
-        description: "Billie Eilish",
-    },
-    {
-        id: 5,
-        cover: CoverMusic02,
-        title: "Scorpion",
-        description: "Drake",
-    },
-    {
-        id: 6,
-        cover: CoverMusic03,
-        title: "WHEN WE ALL",
-        description: "Billie Eilish",
-    },
-];
-
-const ListMusic = () => {
+interface ListInfoRickAndMortyProps {
+    listTableCharacter: Result[] | undefined;
+}
+const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
+    listTableCharacter,
+}) => {
     const navigation = useNavigation();
+
     return (
         <FlatList
-            data={listMusic}
+            data={listTableCharacter}
             horizontal
             showsHorizontalScrollIndicator={false}
             bounces={false}
@@ -73,40 +31,67 @@ const ListMusic = () => {
             renderItem={({ item, index }) => (
                 <TouchableOpacity
                     key={index}
-                    onPress={() => navigation.navigate("NowPlaying")}
+                    onPress={() => navigation.navigate('NowPlaying')}
                 >
-                    <DsFlex flexDirection="column">
+                    <DsFlex flexDirection="column" width={150}>
                         <DsBox>
-                            <DsImage
-                                source={item?.cover}
+                            <Image
+                                source={{
+                                    uri: item?.image,
+                                }}
                                 resizeMode="cover"
-                                width={147}
                                 height={185}
                             />
                         </DsBox>
-                        <DsFlex
+                        <DsBox
                             flexDirection="column"
-                            gap={3}
-                            marginTop={13}
-                            marginLeft={13}
+                            gap={6}
+                            backgroundColor={'#87F54E'}
+                            paddingHorizontal={12}
+                            paddingVertical={8}
                         >
-                            <DsText
-                                color="#E1E1E1"
-                                fontFamily="Inter_700Bold"
-                                fontSize={16}
-                                textTransform="capitalize"
-                            >
-                                {item?.title}
-                            </DsText>
-                            <DsText
-                                color="#E1E1E1"
-                                fontSize={14}
-                                fontFamily="Inter_300Light"
-                                textTransform="capitalize"
-                            >
-                                {item?.description}
-                            </DsText>
-                        </DsFlex>
+                            <DsFlex flexDirection="column">
+                                <DsText
+                                    color="#4D4D4D"
+                                    fontFamily="Inter_700Bold"
+                                    fontSize={16}
+                                    textTransform="capitalize"
+                                >
+                                    Name:
+                                </DsText>
+                                <DsText
+                                    color="#4D4D4D"
+                                    fontSize={14}
+                                    fontFamily="Inter_300Light"
+                                    textTransform="capitalize"
+                                    numberOfLines={1}
+                                    ellipsizeMode="tail"
+                                >
+                                    {item?.name}
+                                </DsText>
+                            </DsFlex>
+
+                            <DsFlex flexDirection="column">
+                                <DsText
+                                    color="#4D4D4D"
+                                    fontFamily="Inter_700Bold"
+                                    fontSize={16}
+                                    textTransform="capitalize"
+                                >
+                                    Status:
+                                </DsText>
+                                <DsText
+                                    color="#4D4D4D"
+                                    fontSize={14}
+                                    fontFamily="Inter_300Light"
+                                    textTransform="capitalize"
+                                    numberOfLines={1}
+                                    ellipsizeMode="tail"
+                                >
+                                    {item?.status}
+                                </DsText>
+                            </DsFlex>
+                        </DsBox>
                     </DsFlex>
                 </TouchableOpacity>
             )}
@@ -114,4 +99,4 @@ const ListMusic = () => {
     );
 };
 
-export default ListMusic;
+export default ListInfoRickAndMorty;

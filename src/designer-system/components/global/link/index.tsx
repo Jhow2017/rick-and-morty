@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import {
     TouchableOpacityProps,
     TouchableOpacity,
     Linking,
     TextStyle,
     ViewStyle,
-} from "react-native";
-import { DsText } from "@ds/components/typography";
-import { filterProps } from "src/services/utils/filterProps";
+} from 'react-native';
+import { DsText } from '@ds/components/typography';
+import { filterProps } from 'src/utils/filterProps';
 
 interface DsLinkType extends TouchableOpacityProps, TextStyle, ViewStyle {
     url?: string;
@@ -27,7 +27,7 @@ const DsLink: React.FC<DsLinkType> = (props) => {
     };
     const textStyles: TextStyle = {
         fontSize: attr.fontSize || 14,
-        color: attr.color ?? "#fff",
+        color: attr.color ?? '#fff',
         top: attr.top ?? 3,
         ...filterProps(attr),
     };

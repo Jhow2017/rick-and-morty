@@ -1,17 +1,17 @@
-import React, { useState, forwardRef } from "react";
-import { TextInput, TextInputProps, ViewStyle } from "react-native";
+import React, { useState, forwardRef } from 'react';
+import { TextInput, TextInputProps, ViewStyle } from 'react-native';
 
 //utils
-import { transformPlaceholder } from "src/services/utils/transformPlaceholder";
+import { transformPlaceholder } from 'src/utils/transformPlaceholder';
 
 //types
-import { DsInputProps } from "./type";
+import { DsInputProps } from './type';
 
 //@ds
-import { DsFlex } from "@ds/layout";
-import DsIcon from "@ds/components/global/icon";
-import ComponentMounter from "@ds/core/component-mounter";
-import { DsText } from "@ds/components/typography";
+import { DsFlex } from '@ds/layout';
+import DsIcon from '@ds/components/global/icon';
+import ComponentMounter from '@ds/core/component-mounter';
+import { DsText } from '@ds/components/typography';
 
 const DsInput = forwardRef<TextInput, DsInputProps>(
     ({ type, ...props }, ref) => {
@@ -26,40 +26,40 @@ const DsInput = forwardRef<TextInput, DsInputProps>(
                         {...(props as TextInputProps)}
                         ref={ref}
                         placeholderTextColor={
-                            attr.placeholderTextColor || "#6f6f6f"
+                            attr.placeholderTextColor || '#6f6f6f'
                         }
                         placeholder={transformPlaceholder(
                             placeholder,
                             textTransform
                         )}
-                        secureTextEntry={type === "password" && !showPassword}
+                        secureTextEntry={type === 'password' && !showPassword}
                         style={{
                             ...(attr.style as ViewStyle),
                             width: attr?.width ?? 334,
                             height: attr?.height ?? 80,
                             borderRadius: attr?.borderRadius ?? 30,
                             borderWidth: attr?.borderWidth ?? 1,
-                            borderColor: attr?.borderColor ?? "#363535",
-                            color: attr?.color ?? "#fff",
+                            borderColor: attr?.borderColor ?? '#363535',
+                            color: attr?.color ?? '#fff',
                             fontSize: attr?.fontSize ?? 16,
-                            fontStyle: attr?.fontStyle ?? "normal",
-                            fontWeight: attr?.fontWeight ?? "700",
+                            fontStyle: attr?.fontStyle ?? 'normal',
+                            fontWeight: attr?.fontWeight ?? '700',
                             padding: attr?.padding ?? 30,
                         }}
                     />
-                    {type === "password" && (
+                    {type === 'password' && (
                         <DsIcon
-                            icon={showPassword ? "eye-show" : "eye-hide"}
+                            icon={showPassword ? 'eye-show' : 'eye-hide'}
                             position="absolute"
                             size={26}
                             right={30}
-                            color={"#5B5B5B"}
+                            color={'#5B5B5B'}
                             onPress={() => setShowPassword((prev) => !prev)}
                         />
                     )}
                 </DsFlex>
                 {error && (
-                    <DsText color={"red"} marginTop={16}>
+                    <DsText color={'red'} marginTop={16}>
                         {error}
                     </DsText>
                 )}
