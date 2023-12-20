@@ -27,15 +27,9 @@ Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da
 <div style="display: inline_block">
 
 [![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/scXx0MdEOMnmHIhIF1nagE/React-design-(Rick-%26-Morty-API)-(Community)?node-id=99%3A1133&mode=dev>)
-[![Figma](https://img.shields.io/badge/figma-%green.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/scXx0MdEOMnmHIhIF1nagE/React-design-(Rick-%26-Morty-API)-(Community)?node-id=99%3A1133&mode=dev>)
+[![Figma](https://img.shields.io/badge/figma-%9146FF.svg?style=for-the-badge&logo=figma&logoColor=white)](<https://www.figma.com/file/scXx0MdEOMnmHIhIF1nagE/React-design-(Rick-%26-Morty-API)-(Community)?node-id=99%3A1133&mode=dev>)
 
 </div>
-
-<!-- ## Comments:
-1° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/>
-2° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/>
-3° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/>
-4° Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação. <br/> -->
 
 ## My Tech Stack
 
