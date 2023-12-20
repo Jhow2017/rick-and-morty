@@ -23,11 +23,11 @@ const HomeScreen = () => {
             }}
         >
             <LayoutPublic paddingHorizontal={0} backgroundColor={'#0F3A40'}>
-                <Header marginTop={30} sizeLogo={150} paddingHorizontal={24} />
+                <Header marginTop={30} sizeLogo={150} paddingHorizontal={8} />
 
                 <DsBox marginTop={42} flex={1}>
                     <DsScrollTab
-                        tabs={['Characters', 'Video', 'Artists', 'Podcast']}
+                        tabs={['Personagens', 'Novo']}
                         onTabChange={setActiveTab}
                         contentContainerStyle={{
                             paddingHorizontal: 24,

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { ScrollView, StyleProp, ViewStyle } from "react-native";
+import React, { useState } from 'react';
+import { ScrollView, StyleProp, ViewStyle } from 'react-native';
 
-import { DsBox, DsFlex } from "@ds/layout";
-import { DsButton } from "@ds/components/global";
+import { DsBox, DsFlex } from '@ds/layout';
+import { DsButton } from '@ds/components/global';
 
 interface DsScrollTabProps {
     tabs: string[];
@@ -46,20 +46,20 @@ const DsScrollTab: React.FC<DsScrollTabProps> = ({
                             variant="default"
                             size="large"
                             onPress={() => handleTabPress(index)}
-                            width={"auto"}
-                            height={"auto"}
+                            width={'auto'}
+                            height={'auto'}
                             padding={0}
                             fontSize={20}
                             fontWeight="600"
-                            color={activeTab === index ? "#DBDBDB" : "#616161"}
+                            color={activeTab === index ? '#DBDBDB' : '#616161'}
                         >
                             {tab}
                         </DsButton>
                         <DsBox
-                            width={26}
+                            width={'100%'}
                             borderBottomWidth={3}
                             borderColor={
-                                activeTab === index ? "#42C83C" : "transparent"
+                                activeTab === index ? '#42C83C' : 'transparent'
                             }
                             borderBottomRightRadius={20}
                             borderBottomLeftRadius={20}
@@ -67,7 +67,7 @@ const DsScrollTab: React.FC<DsScrollTabProps> = ({
                     </DsFlex>
                 ))}
             </ScrollView>
-            <DsBox flex={1} height={"100%"}>
+            <DsBox flex={1} height={'100%'}>
                 {children && React.Children.toArray(children)}
             </DsBox>
         </DsBox>

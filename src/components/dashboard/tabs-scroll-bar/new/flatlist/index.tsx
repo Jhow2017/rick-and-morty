@@ -57,7 +57,7 @@ const ListInfoRickAndMorty: React.FC<ListInfoRickAndMortyProps> = ({
                                     fontSize={16}
                                     textTransform="capitalize"
                                 >
-                                    Name:
+                                    Nome:
                                 </DsText>
                                 <DsText
                                     color="#4D4D4D"
