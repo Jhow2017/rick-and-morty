@@ -24,7 +24,7 @@ const HomeScreen = () => {
             }}
         >
             <LayoutPublic paddingHorizontal={0} backgroundColor={'#0F3A40'}>
-                <Header sizeLogo={120} paddingHorizontal={24} />
+                <Header sizeLogo={120} paddingHorizontal={10} />
 
                 <DsBox marginTop={16} flex={1} width={'100%'}>
                     <DsScrollTab
