@@ -2,8 +2,9 @@ import React from 'react';
 import { Modal, ModalBaseProps } from 'react-native';
 
 import { DsBox } from '@ds/layout';
+import { DsBoxType } from '@ds/layout/box';
 
-interface DsModalProps extends ModalBaseProps {
+interface DsModalProps extends ModalBaseProps, DsBoxType {
     visible: boolean;
     onClose: () => void;
     children: React.ReactNode;
@@ -17,7 +18,7 @@ const DsModal: React.FC<DsModalProps> = (props) => {
             transparent={true}
             visible={visible}
             onRequestClose={onClose}
-            {...rest}
+            {...(rest as ModalBaseProps)}
         >
             <DsBox
                 flex={1}
@@ -25,7 +26,14 @@ const DsModal: React.FC<DsModalProps> = (props) => {
                 alignItems="center"
                 backgroundColor="rgba(0, 0, 0, 0.5)"
             >
-                {children}
+                <DsBox
+                    width={'100%'}
+                    justifyContent="center"
+                    alignItems="center"
+                    {...(props as DsBoxType)}
+                >
+                    {children}
+                </DsBox>
             </DsBox>
         </Modal>
     );
