@@ -23,6 +23,12 @@ export interface Result {
     status: string;
     image: string;
     species: string;
+    gender?: string;
+    type?: string;
+    origin?: {
+        id: string;
+        name: string;
+    };
 }
 
 export interface Location {

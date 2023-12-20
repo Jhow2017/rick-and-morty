@@ -12,6 +12,12 @@ export const GET_LIST_RICK_AND_MORTY = gql`
                 status
                 image
                 species
+                type
+                gender
+                origin {
+                    id
+                    name
+                }
             }
         }
         location(id: 1) {

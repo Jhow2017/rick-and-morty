@@ -2,8 +2,8 @@
 import { Result } from 'src/models/list-rick-and-morty.types';
 
 //@Ds
-import { DsBox } from '@ds/layout';
-import { DsImage } from '@ds/components/global';
+import { DsBox, DsFlex } from '@ds/layout';
+import { DsDivider, DsImage } from '@ds/components/global';
 import { DsText } from '@ds/components/typography';
 
 interface ModalDetailsItemProps {
@@ -23,27 +23,141 @@ const ModalDetailsItem: React.FC<ModalDetailsItemProps> = ({
                     height={300}
                 />
             </DsBox>
-            <DsText
-                color="#4D4D4D"
-                fontSize={14}
-                fontFamily="Inter_300Light"
-                textTransform="capitalize"
-                numberOfLines={1}
-                ellipsizeMode="tail"
+            <DsBox
+                width={'100%'}
+                justifyContent="center"
+                alignItems="center"
+                backgroundColor={'#87F54E'}
+                padding={16}
+                borderBottomEndRadius={10}
+                borderBottomStartRadius={10}
             >
-                {selectedItem?.name}
-            </DsText>
+                <DsText
+                    color="#4D4D4D"
+                    fontSize={32}
+                    fontFamily="Inter_500Medium"
+                    textTransform="capitalize"
+                    textAlign="center"
+                    marginTop={16}
+                >
+                    {selectedItem?.name}
+                </DsText>
 
-            <DsText
-                color="#4D4D4D"
-                fontSize={14}
-                fontFamily="Inter_300Light"
-                textTransform="capitalize"
-                numberOfLines={1}
-                ellipsizeMode="tail"
-            >
-                {selectedItem?.status}
-            </DsText>
+                <DsDivider
+                    backgroundColor={'#4D4D4D'}
+                    width={150}
+                    height={2.5}
+                />
+
+                <DsFlex
+                    alignItems="flex-start"
+                    justifyContent="flex-start"
+                    width={'100%'}
+                    marginTop={18}
+                    gap={6}
+                    flexDirection="column"
+                >
+                    {selectedItem?.status && (
+                        <DsFlex flexDirection="row" gap={12}>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_700Bold"
+                                textAlign="left"
+                            >
+                                Status:
+                            </DsText>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_400Regular"
+                            >
+                                {selectedItem?.status}
+                            </DsText>
+                        </DsFlex>
+                    )}
+
+                    {selectedItem?.species && (
+                        <DsFlex flexDirection="row" gap={12}>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_700Bold"
+                                textAlign="left"
+                            >
+                                Espécies:
+                            </DsText>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_400Regular"
+                            >
+                                {selectedItem?.species}
+                            </DsText>
+                        </DsFlex>
+                    )}
+
+                    {selectedItem?.gender && (
+                        <DsFlex flexDirection="row" gap={12}>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_700Bold"
+                                textAlign="left"
+                            >
+                                Gênero:
+                            </DsText>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_400Regular"
+                            >
+                                {selectedItem?.gender}
+                            </DsText>
+                        </DsFlex>
+                    )}
+
+                    {selectedItem?.origin?.name && (
+                        <DsFlex flexDirection="row" gap={12}>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_700Bold"
+                                textAlign="left"
+                            >
+                                Origem:
+                            </DsText>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_400Regular"
+                            >
+                                {selectedItem?.origin?.name}
+                            </DsText>
+                        </DsFlex>
+                    )}
+
+                    {selectedItem?.type && (
+                        <DsFlex flexDirection="row" gap={12}>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_700Bold"
+                                textAlign="left"
+                            >
+                                Tipo:
+                            </DsText>
+                            <DsText
+                                color="#4D4D4D"
+                                fontSize={26}
+                                fontFamily="Inter_400Regular"
+                            >
+                                {selectedItem?.type}
+                            </DsText>
+                        </DsFlex>
+                    )}
+                </DsFlex>
+            </DsBox>
         </DsBox>
     );
 };
