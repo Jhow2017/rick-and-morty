@@ -1,10 +1,10 @@
-import { Platform } from 'react-native';
+import { useEffect, useRef } from 'react';
+import { Animated, Easing, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 //@Ds
 import { DsBox, DsFlex } from '@ds/layout';
 import { DsImage, DsButton } from '@ds/components/global';
-import { DsText } from '@ds/components/typography';
 
 //images
 import SpaceBgGetstart from '@images/splash/space-bg-getstart.png';
@@ -13,10 +13,32 @@ import Spacecraft from '@images/splash/spacecraft.png';
 
 const GetStartedScreen = () => {
     const navigation = useNavigation();
+    const scaleValue = useRef(new Animated.Value(1)).current;
 
     const OpenHandleGetstarted = () => {
         navigation.navigate('ChooseMode');
     };
+
+    const pulse = () => {
+        Animated.sequence([
+            Animated.timing(scaleValue, {
+                toValue: 1.2,
+                duration: 1500,
+                easing: Easing.bezier(0.4, 0, 0.2, 1),
+                useNativeDriver: true,
+            }),
+            Animated.timing(scaleValue, {
+                toValue: 1,
+                duration: 1500,
+                easing: Easing.bezier(0.4, 0, 0.2, 1),
+                useNativeDriver: true,
+            }),
+        ]).start(() => pulse());
+    };
+
+    useEffect(() => {
+        pulse();
+    }, []);
     return (
         <DsBox flex={1} alignItems="center" backgroundColor={'#0d0c0c'}>
             <DsImage position="absolute" source={SpaceBgGetstart} />
@@ -36,14 +58,19 @@ const GetStartedScreen = () => {
                 paddingHorizontal={53}
                 position="relative"
             >
-                <DsImage
+                <Animated.Image
+                    style={{
+                        transform: [{ scale: scaleValue }],
+
+                        width: 351,
+                        height: 192,
+                        position: 'absolute',
+                        marginTop: Platform.OS === 'ios' ? -180 : -140,
+                    }}
                     source={Spacecraft}
                     resizeMode="cover"
-                    width={351}
-                    height={192}
-                    position="absolute"
-                    marginTop={Platform.OS === 'ios' ? -180 : -140}
                 />
+
                 <DsButton
                     variant="secondary"
                     size="large"
