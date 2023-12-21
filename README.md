@@ -6,7 +6,7 @@ Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da
 [![linkedin](https://img.shields.io/badge/linkedin-9146FF?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jonathan-gama-2365a4187/)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://www.facebook.com/jhowgama/)
 
-## Technologies used in the test
+## Tecnologias usadas no teste
 
 <div style="display: inline_block">
     <img align="center" alt="html5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
@@ -23,7 +23,7 @@ Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da
 
 </div>
 
-## Figma inspiration
+## Inspiração Figma
 
 <div style="display: inline_block">
 
@@ -64,7 +64,7 @@ Ex no app: <br/>
 
 Obs: Ainda estou verificando se faz sentido implemetar o sistema de breakpoint
 
-## My Tech Stack
+## Skills
 
 <div style="display: inline_block">
     <img align="center" alt="html5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
