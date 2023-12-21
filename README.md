@@ -32,6 +32,38 @@ Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da
 
 </div>
 
+## Observações:
+
+Além dessas tecnologias usadas, usei uma lib minha que estou criando do zero para RN, para web ela ja esta pronta, tem a mesma sintaxe do Chakra Ui, porem o core da aplicação não existe nenhuma lib por tras, apenas no final, eu gero um componente styled-componet.
+
+Ex na web:
+
+```html
+<DsText
+    width={{ sm: '100%', md: '100%', xl: '466px' }}
+    color="var(--amethystDeep)"
+    fontSize="16px"
+    fontWeight="400"
+>
+    mensagem aqui
+</DsText>
+```
+
+Ex no app: <br/>
+
+```html
+<DsText
+    width="100%"
+    color="var(--amethystDeep)"
+    fontSize="16px"
+    fontWeight="400"
+>
+    mensagem aqui
+</DsText>
+```
+
+Obs: Ainda estou verificando se faz sentido implemetar o sistema de breakpoint
+
 ## My Tech Stack
 
 <div style="display: inline_block">
